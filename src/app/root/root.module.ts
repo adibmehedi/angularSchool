@@ -1,21 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { RootDefaultComponent } from '../root/components/root-default/root-default.component';
-import { CarComponent } from '../root/components/car/car.component';
-import { GarageComponent } from '../root/components/garage/garage.component';
+import { GarageModule } from '../garage/garage.module';
 
 @NgModule({
     declarations: [
-        RootDefaultComponent,
-        CarComponent,
-        GarageComponent
+        RootDefaultComponent
     ],
     imports: [
-        BrowserModule
+        BrowserModule,
+        GarageModule
     ],
     providers: [],
-    bootstrap: [RootDefaultComponent, CarComponent, GarageComponent]
+    bootstrap: [RootDefaultComponent]
 })
 export class RootModule {
 }
