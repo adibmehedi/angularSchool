@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Car} from '../../models/car';
+import {CarDataService} from '../../services/car-data.service';
 
 @Component({
   selector: 'app-create-car',
@@ -8,10 +9,15 @@ import {Car} from '../../models/car';
 })
 export class CreateCarComponent implements OnInit {
 
-  model=new Car('Toyota','A Random Text');
+  model:Car=new Car('Toyota','A Random Text');
 
+  constructor(public carDataService:CarDataService) {
+    
+  }
 
-  constructor() { }
+  save(car:Car):void{
+    this.carDataService.addCar(car);
+  }
 
   ngOnInit() {
   }
